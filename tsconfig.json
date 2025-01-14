@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "baseUrl": "./src",
+        "paths": {
+            "@utils/*": [
+                "./utils/*"
+            ],
+        },
+        "esModuleInterop": true,
+        "moduleResolution": "bundler",
+        "target": "esnext",
+        "module": "ES2022",
+        "lib": [
+            "es2015",
+            "es2016",
+            "es2017",
+            "dom"
+        ],
+        "skipLibCheck": true,
+        "strict": true,
+        "sourceMap": true,
+        "declaration": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declarationDir": "dist",
+        "outDir": "dist",
+    },
+    "include": [
+        "src/**/*",
+        "src/routes/**/*"
+    ]
+}
