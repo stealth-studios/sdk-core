@@ -53,7 +53,7 @@ export default async function (app: Server) {
             }
 
             await request.framework.finishConversation(conversation);
-            
+
             return reply.status(200).send({});
         },
     );

@@ -79,9 +79,8 @@ export default async function (app: Server) {
                 });
             }
 
-            const character = await request.framework.getOrCreateCharacter(
-                characterData,
-            );
+            const character =
+                await request.framework.getOrCreateCharacter(characterData);
 
             if (!character) {
                 return reply.status(400).send({

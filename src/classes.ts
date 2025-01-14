@@ -73,7 +73,10 @@ export abstract class Adapter {
 }
 
 export class Character {
-    constructor(public readonly name: string, public readonly hash: string) {}
+    constructor(
+        public readonly name: string,
+        public readonly hash: string,
+    ) {}
 }
 
 export abstract class Conversation {
@@ -88,7 +91,10 @@ export abstract class Conversation {
 }
 
 export class User {
-    constructor(public name: string, public id: number) {}
+    constructor(
+        public name: string,
+        public id: number,
+    ) {}
 }
 
 export abstract class Framework<T> {
