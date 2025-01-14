@@ -19,7 +19,7 @@ jobs:
             - name: Install and lint
               run: |
                   npm install
-                  npm run ci:lint
+                  npm run lint
     tsc:
         name: TypeScript
         runs-on: ubuntu-latest
