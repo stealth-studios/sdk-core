@@ -2,7 +2,7 @@
 
 # 🚀 sdk-core
 
-_A powerful PostgreSQL adapter for the Stealth SDK_
+_Seamlessly deploy sophisticated intelligences into dynamic game worlds._
 
 [![CI Status](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml/badge.svg)](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml)
 [![License](https://img.shields.io/github/license/stealth-studios/sdk-core)](https://github.com/stealth-studios/sdk-core/blob/main/LICENSE)
