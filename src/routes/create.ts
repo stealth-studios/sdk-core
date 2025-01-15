@@ -41,6 +41,13 @@ export default async function (app: Server) {
                             secret: { type: "string" },
                         },
                     },
+                    400: {
+                        description: "Invalid request",
+                        type: "object",
+                        properties: {
+                            message: { type: "string" },
+                        },
+                    },
                     403: {
                         description: "Invalid API key",
                         type: "object",
