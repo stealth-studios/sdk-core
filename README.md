@@ -2,7 +2,7 @@
 
 # StealthSDK Core
 
-_A powerful and flexible AI conversation framework_
+_Seamlessly deploy sophisticated intelligences into dynamic game worlds._
 
 [![CI](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml/badge.svg)](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml)
 [![License](https://img.shields.io/github/license/stealth-studios/sdk-core)](https://github.com/stealth-studios/sdk-core/blob/main/LICENSE)
