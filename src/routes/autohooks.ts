@@ -5,7 +5,7 @@ export default async function (app: FastifyInstance) {
     // Validate API key on each request
     app.addHook("onRequest", (request, reply, next) => {
         const isValidApiKey =
-            request.headers.authorization === process.env.ENDPOINT_API_KEY;
+            request.headers.authorization === request.config.endpointAuth;
 
         if (!isValidApiKey) {
             return reply.status(403).send({ message: "Invalid API key" });

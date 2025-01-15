@@ -6,6 +6,7 @@ import apiReference, {
 } from "@scalar/fastify-api-reference";
 import { Framework, Adapter } from "classes";
 import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
+import { CoreOptions } from "core";
 
 // We use an OpenAPI schema for every endpoint. This is a type provider that allows us to use the schema to validate the request body and access the schema in the request object.
 const server = fastify().withTypeProvider<JsonSchemaToTsProvider>();
@@ -51,12 +52,6 @@ const apiReferenceConfig: FastifyApiReferenceOptions = {
     configuration: {
         authentication: {
             preferredSecurityScheme: "endpointAuth",
-            apiKey: {
-                token:
-                    process.env.ENVIRONMENT === "development"
-                        ? process.env.ENDPOINT_API_KEY!
-                        : "",
-            },
         },
     },
 };
@@ -68,6 +63,7 @@ declare module "fastify" {
     interface FastifyRequest {
         framework: Framework<any>;
         adapter: Adapter;
+        config: CoreOptions["config"];
     }
 }
 

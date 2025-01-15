@@ -12,6 +12,8 @@ export interface CoreOptions {
     config: {
         host: string;
         port: number;
+        endpointAuth: string;
+        isDevelopment?: boolean;
     };
 }
 
@@ -27,7 +29,9 @@ export class Core {
     }
 
     async start() {
-        const isDevelopment = process.env.NODE_ENV === "development";
+        const isDevelopment =
+            this.options.config.isDevelopment ??
+            process.env.NODE_ENV === "development";
 
         if (isDevelopment) {
             logger.warn(
@@ -58,10 +62,11 @@ export class Core {
 
         server.decorateRequest("framework");
         server.decorateRequest("adapter");
-
+        server.decorateRequest("config");
         server.addHook("onRequest", async (request) => {
             request.framework = this.framework;
             request.adapter = this.adapter;
+            request.config = this.options.config;
         });
 
         await this.framework.start(this.adapter);
