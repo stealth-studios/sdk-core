@@ -4,20 +4,10 @@
 
 _A powerful PostgreSQL adapter for the Stealth SDK_
 
-<div align="center">
-  <a href="https://github.com/stealth-studios/sdk-core/actions/workflows/ci-ts.yaml">
-    <img src="https://github.com/stealth-studios/sdk-core/actions/workflows/ci-ts.yaml/badge.svg" alt="CI Status">
-  </a>
-  <a href="https://github.com/stealth-studios/sdk-core/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/stealth-studios/sdk-core" alt="License">
-  </a>
-  <a href="https://www.npmjs.com/package/@stealthstudios/sdk-core">
-    <img src="https://img.shields.io/npm/v/@stealthstudios/sdk-core" alt="npm version">
-  </a>
-  <a href="https://www.npmjs.com/package/@stealthstudios/sdk-core">
-    <img src="https://img.shields.io/npm/dm/@stealthstudios/sdk-core" alt="npm downloads">
-  </a>
-</div>
+[![CI Status](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml/badge.svg)](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml)
+[![License](https://img.shields.io/github/license/stealth-studios/sdk-core)](https://github.com/stealth-studios/sdk-core/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@stealthstudios/sdk-core)](https://www.npmjs.com/package/@stealthstudios/sdk-core)
+[![npm downloads](https://img.shields.io/npm/dm/@stealthstudios/sdk-core)](https://www.npmjs.com/package/@stealthstudios/sdk-core)
 
 <p align="center">
     <a href="#features">Features</a> •
