@@ -1,13 +1,23 @@
 <div align="center">
 
-# StealthSDK Core
+# 🚀 sdk-core
 
-_Seamlessly deploy sophisticated intelligences into dynamic game worlds._
+_A powerful PostgreSQL adapter for the Stealth SDK_
 
-[![CI](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml/badge.svg)](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml)
-[![License](https://img.shields.io/github/license/stealth-studios/sdk-core)](https://github.com/stealth-studios/sdk-core/blob/main/LICENSE)
-[![npm version](https://img.shields.io/npm/v/@stealthstudios/sdk-core)](https://www.npmjs.com/package/@stealthstudios/sdk-core)
-[![npm downloads](https://img.shields.io/npm/dm/@stealthstudios/sdk-core)](https://www.npmjs.com/package/@stealthstudios/sdk-core)
+<div align="center">
+  <a href="https://github.com/stealth-studios/sdk-core/actions/workflows/ci-ts.yaml">
+    <img src="https://github.com/stealth-studios/sdk-core/actions/workflows/ci-ts.yaml/badge.svg" alt="CI Status">
+  </a>
+  <a href="https://github.com/stealth-studios/sdk-core/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/stealth-studios/sdk-core" alt="License">
+  </a>
+  <a href="https://www.npmjs.com/package/@stealthstudios/sdk-core">
+    <img src="https://img.shields.io/npm/v/@stealthstudios/sdk-core" alt="npm version">
+  </a>
+  <a href="https://www.npmjs.com/package/@stealthstudios/sdk-core">
+    <img src="https://img.shields.io/npm/dm/@stealthstudios/sdk-core" alt="npm downloads">
+  </a>
+</div>
 
 <p align="center">
     <a href="#features">Features</a> •
@@ -36,12 +46,14 @@ _Seamlessly deploy sophisticated intelligences into dynamic game worlds._
 
 Ready to begin? Check out our [Getting Started Guide](https://google.com/docs/get-started) to launch your first AI conversation in minutes!
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-We welcome contributions from the community! Before contributing, please:
+We love your input! We want to make contributing as easy and transparent as possible. Here's how you can help:
 
-- Review our code guidelines
-- Check existing issues or create a new one
-- Submit a pull request with your improvements
+- 📖 Review our code guidelines
+- 🔍 Check existing issues or create a new one
+- 🚀 Submit a pull request with your improvements
 
-Found a bug or have a suggestion? [Open an issue](https://github.com/stealth-studios/sdk-core/issues/new) and let us know!
+### Found a Bug? Have a Suggestion?
+
+We'd love to hear from you! [Open an issue](https://github.com/stealth-studios/sdk-adapter-postgres/issues/new) and help us make this even better.
