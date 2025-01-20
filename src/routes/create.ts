@@ -25,7 +25,7 @@ export default async function (app: Server) {
                                 required: ["name", "id"],
                                 properties: {
                                     name: { type: "string" },
-                                    id: { type: "number" },
+                                    id: { type: "string" },
                                 },
                             },
                         },
