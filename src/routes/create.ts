@@ -108,6 +108,14 @@ export default async function (app: Server) {
                 conversation = await request.framework.getConversationBy({
                     persistenceToken,
                 });
+
+                const characterHash =
+                    await request.framework.getCharacterHash(character);
+
+                // Ensure that conversations do not get stuck in the previous version of the character
+                if (conversation?.character.hash !== characterHash) {
+                    conversation = undefined;
+                }
             }
 
             if (!conversation) {

@@ -51,15 +51,6 @@ export class Core {
         const __dirname = dirname(fileURLToPath(import.meta.url));
         const routesDir = join(__dirname, "routes");
 
-        await server.register(fastifyAutoload, {
-            dir: routesDir,
-            autoHooks: true,
-            cascadeHooks: true,
-            options: {
-                prefix: "/api",
-            },
-        });
-
         server.decorateRequest("framework");
         server.decorateRequest("adapter");
         server.decorateRequest("config");
@@ -67,6 +58,15 @@ export class Core {
             request.framework = this.framework;
             request.adapter = this.adapter;
             request.config = this.options.config;
+        });
+
+        await server.register(fastifyAutoload, {
+            dir: routesDir,
+            autoHooks: true,
+            cascadeHooks: true,
+            options: {
+                prefix: "/api",
+            },
         });
 
         await this.framework.start(this.adapter);

@@ -15,7 +15,7 @@ export default async function (app: Server) {
                     properties: {
                         secret: { type: "string" },
                         message: { type: "string" },
-                        playerId: { type: "number" },
+                        playerId: { type: "string" },
                         context: {
                             type: "array",
                             items: {

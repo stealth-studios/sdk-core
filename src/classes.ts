@@ -6,7 +6,7 @@ interface MessageContext {
 }
 
 interface MessageData {
-    senderId?: number;
+    senderId?: string;
     content: string;
     role: string;
     context: MessageContext[];
@@ -93,7 +93,7 @@ export abstract class Conversation {
 export class User {
     constructor(
         public name: string,
-        public id: number,
+        public id: string,
     ) {}
 }
 
@@ -110,6 +110,7 @@ export abstract class Framework<T> {
     ): AsyncOrSync<Character | undefined>;
     abstract loadCharacter(character: Character): AsyncOrSync<void>;
     abstract containsCharacter(character: Character): AsyncOrSync<boolean>;
+    abstract getCharacterHash(character: Character): AsyncOrSync<string>;
 
     abstract createConversation(params: {
         character: Character;
@@ -123,7 +124,7 @@ export abstract class Framework<T> {
     abstract sendToConversation(
         conversation: Conversation,
         message: string,
-        playerId: number,
+        playerId: string,
         context: MessageContext[],
     ): AsyncOrSync<SendResponse>;
     abstract getConversationBy(params: {
