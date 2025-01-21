@@ -134,3 +134,16 @@ export abstract class Framework<T> {
     }): AsyncOrSync<Conversation | undefined>;
     abstract finishConversation(conversation: Conversation): AsyncOrSync<void>;
 }
+
+export class EmptyAdapter extends Adapter {
+    async init() {}
+    getCharacter(): any {}
+    createCharacter(): any {}
+    createConversation(): any {}
+    getConversationMessages(): any {}
+    getConversationBy(): any {}
+    setConversationUsers(): any {}
+    setConversationData(): any {}
+    addMessageToConversation(): any {}
+    finishConversation(): any {}
+}
