@@ -34,7 +34,7 @@ _Seamlessly deploy sophisticated intelligences into dynamic game worlds._
 
 ## 🚀 Getting Started
 
-Ready to begin? Check out our [Getting Started Guide](https://google.com/docs/get-started) to launch your first AI conversation in minutes!
+Ready to begin? Check out our [Getting Started Guide](https://docs.stealthsdk.com/guide/quick-start) to launch your first AI conversation in minutes!
 
 ## 🤝 Contributing
 
