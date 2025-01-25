@@ -47,12 +47,12 @@ export abstract class Adapter {
     abstract getCharacter(
         hash: string,
     ): AsyncOrSync<CharacterResponse | undefined>;
-    abstract createCharacter(
-        character: Character,
+    abstract createCharacter<T extends Character>(
+        character: T,
     ): AsyncOrSync<CharacterResponse | undefined>;
 
-    abstract createConversation(params: {
-        character: Character;
+    abstract createConversation<T extends Character>(params: {
+        character: T;
         users: User[];
         persistenceToken?: string;
     }): AsyncOrSync<ConversationResponse | undefined>;
@@ -64,9 +64,9 @@ export abstract class Adapter {
         data?: unknown;
     }): AsyncOrSync<unknown | null>;
     abstract setConversationUsers(id: number, users: User[]): AsyncOrSync<void>;
-    abstract setConversationCharacter(
+    abstract setConversationCharacter<T extends Character>(
         id: number,
-        character: Character,
+        character: T,
     ): AsyncOrSync<void>;
     abstract setConversationData(id: number, data: unknown): AsyncOrSync<void>;
     abstract addMessageToConversation(
@@ -87,7 +87,7 @@ export abstract class Conversation {
     constructor(
         public readonly id: number,
         public readonly secret: string,
-        public readonly character: Character,
+        public character: Character,
         public users: User[],
         public readonly persistenceToken?: string,
         public readonly data?: unknown,
@@ -107,7 +107,6 @@ export abstract class Framework<T> {
     constructor(protected readonly options: T) {}
 
     abstract start(adapter: Adapter): AsyncOrSync<void>;
-    abstract stop(): AsyncOrSync<void>;
     abstract validateCharacter(data: unknown): AsyncOrSync<boolean>;
     abstract getOrCreateCharacter(
         data: unknown,
