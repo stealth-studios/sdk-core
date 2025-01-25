@@ -5,9 +5,9 @@
 _Seamlessly deploy sophisticated intelligences into dynamic game worlds._
 
 [![CI Status](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml/badge.svg)](https://github.com/stealth-studios/sdk-core/actions/workflows/ci-backend.yaml)
-[![License](https://img.shields.io/github/license/stealth-studios/sdk-core)](https://github.com/stealth-studios/sdk-core/blob/main/LICENSE)
-[![npm version](https://img.shields.io/npm/v/@stealthstudios/sdk-core)](https://www.npmjs.com/package/@stealthstudios/sdk-core)
-[![npm downloads](https://img.shields.io/npm/dm/@stealthstudios/sdk-core)](https://www.npmjs.com/package/@stealthstudios/sdk-core)
+[![License](https://img.shields.io/github/license/stealth-studios/sdk-core?)](https://github.com/stealth-studios/sdk-core/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@stealthstudios/sdk-core?)](https://www.npmjs.com/package/@stealthstudios/sdk-core)
+[![npm downloads](https://img.shields.io/npm/dm/@stealthstudios/sdk-core?)](https://www.npmjs.com/package/@stealthstudios/sdk-core)
 
 <p align="center">
     <a href="#features">Features</a> •
