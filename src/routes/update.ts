@@ -1,3 +1,4 @@
+import logger from "@utils/logger";
 import { Server } from "@utils/server";
 import { User } from "classes";
 
@@ -26,6 +27,9 @@ export default async function (app: Server) {
                                 },
                             },
                         },
+                        character: {
+                            type: "object",
+                        },
                     },
                 },
                 response: {
@@ -45,7 +49,7 @@ export default async function (app: Server) {
             },
         },
         async (request, reply) => {
-            const { secret, users } = request.body;
+            const { secret, users, character: characterData } = request.body;
 
             const conversation = await request.framework.getConversationBy({
                 secret,
@@ -57,16 +61,56 @@ export default async function (app: Server) {
                 });
             }
 
-            if (!users) {
+            if (!users && !characterData) {
                 return reply.status(400).send({
-                    message: "No users provided",
+                    message: "No data provided",
                 });
             }
 
-            await request.framework.setConversationUsers(
-                conversation,
-                users.map((user) => new User(user.name, user.id)),
-            );
+            if (users) {
+                await request.framework.setConversationUsers(
+                    conversation,
+                    users.map((user) => new User(user.name, user.id)),
+                );
+            }
+
+            if (characterData) {
+                try {
+                    if (!request.framework.validateCharacter(characterData)) {
+                        return reply.status(400).send({
+                            message: "Invalid character",
+                        });
+                    }
+                } catch (error) {
+                    return reply.status(400).send({
+                        message:
+                            error instanceof Error
+                                ? error.message
+                                : "Unknown error",
+                    });
+                }
+
+                const character =
+                    await request.framework.getOrCreateCharacter(characterData);
+
+                if (!character) {
+                    return reply.status(400).send({
+                        message: "Character not found",
+                    });
+                }
+
+                if (!(await request.framework.containsCharacter(character))) {
+                    logger.debug(
+                        `Character ${character.name} (${character.hash}) not found during update, loading into framework..`,
+                    );
+                    await request.framework.loadCharacter(character);
+                }
+
+                await request.framework.setConversationCharacter(
+                    conversation,
+                    character,
+                );
+            }
 
             return {
                 message: "Conversation updated",

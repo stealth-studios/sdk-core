@@ -47,8 +47,8 @@ export abstract class Adapter {
     abstract getCharacter(
         hash: string,
     ): AsyncOrSync<CharacterResponse | undefined>;
-    abstract createCharacter<T extends Character>(
-        character: T,
+    abstract createCharacter(
+        character: Character,
     ): AsyncOrSync<CharacterResponse | undefined>;
 
     abstract createConversation(params: {
@@ -64,6 +64,10 @@ export abstract class Adapter {
         data?: unknown;
     }): AsyncOrSync<unknown | null>;
     abstract setConversationUsers(id: number, users: User[]): AsyncOrSync<void>;
+    abstract setConversationCharacter(
+        id: number,
+        character: Character,
+    ): AsyncOrSync<void>;
     abstract setConversationData(id: number, data: unknown): AsyncOrSync<void>;
     abstract addMessageToConversation(
         id: number,
@@ -133,6 +137,10 @@ export abstract class Framework<T> {
         persistenceToken?: string;
     }): AsyncOrSync<Conversation | undefined>;
     abstract finishConversation(conversation: Conversation): AsyncOrSync<void>;
+    abstract setConversationCharacter(
+        conversation: Conversation,
+        character: Character,
+    ): AsyncOrSync<void>;
 }
 
 export class EmptyAdapter extends Adapter {
@@ -143,6 +151,7 @@ export class EmptyAdapter extends Adapter {
     getConversationMessages(): any {}
     getConversationBy(): any {}
     setConversationUsers(): any {}
+    setConversationCharacter(): any {}
     setConversationData(): any {}
     addMessageToConversation(): any {}
     finishConversation(): any {}
