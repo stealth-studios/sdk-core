@@ -1,3 +1,7 @@
+# 1.1.2
+
+- Disable minification
+
 # 1.1.1
 
 - Remove redundant `stop` function on frameworks
